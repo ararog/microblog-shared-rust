@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option objc_class_prefix = "HLW";
+option go_package = "github.com/ararog/microblog-shared;rpc";
+
+package microblog.rpc.v1;
+
+message Media {
+  string id = 1;
+  string url = 2;
+  string type = 3;
+}
+
+message GetProfilesMediasRequest {
+  string type = 1;
+  repeated string ids = 2;
+}
+
+message GetProfilesMediasResponse {
+  repeated Media medias = 1;
+}

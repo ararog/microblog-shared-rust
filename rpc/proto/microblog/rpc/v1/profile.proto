@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option objc_class_prefix = "HLW";
+option go_package = "github.com/ararog/microblog-shared;rpc";
+
+package microblog.rpc.v1;
+
+message Profile {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string avatar = 4;
+}
+
+message GetProfileByUserIdRequest {
+  string id = 1;
+}
+
+message GetProfileByUserIdResponse {
+  Profile profile = 1;
+}
+
+message CreateProfileRequest {
+  string user_id = 1;
+  string name = 2;
+  string birth_date = 3;
+}
+
+message CreateProfileResponse {
+  string id = 1;
+} 

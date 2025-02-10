@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option objc_class_prefix = "HLW";
+option go_package = "github.com/ararog/microblog-shared;rpc";
+
+package microblog.rpc.v1;
+
+message Users {
+  string id = 1;
+  string username = 2;
+}
+
+message GetUsersRequest {
+  repeated string ids = 1;
+}
+
+message GetUsersResponse {
+  repeated Users users = 1;
+}
